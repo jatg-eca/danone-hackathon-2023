@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ViewsModule } from './views/views.module';
 import { ComponentsModule } from './components/components.module';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ComponentsModule } from './components/components.module';
     AppRoutingModule,
     SharedModule,
     ViewsModule,
-    ComponentsModule
+    ComponentsModule,
+    GraphQLModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

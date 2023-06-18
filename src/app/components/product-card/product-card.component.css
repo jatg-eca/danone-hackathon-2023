@@ -3,3 +3,9 @@ input[type="range"] {
     background-color: red;
     height: 1.3vh;
   }
+
+img {
+    height: 30vh;
+    width: auto;
+    object-fit: contain;
+}

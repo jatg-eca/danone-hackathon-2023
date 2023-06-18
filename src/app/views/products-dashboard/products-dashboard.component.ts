@@ -1,21 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
+import { ApiService } from 'src/app/services/api.service';
+import { Apollo } from "apollo-angular";
+import { GET_PRODUCTS } from "../../graphql.operations";
 
 @Component({
   selector: 'app-products-dashboard',
   templateUrl: './products-dashboard.component.html',
   styleUrls: ['./products-dashboard.component.css']
 })
-export class ProductsDashboardComponent {
+export class ProductsDashboardComponent implements OnInit {
+
+  constructor( private apiService: ApiService, private apollo: Apollo) { }
+  ngOnInit() {
+    this.apollo.watchQuery({
+      query: GET_PRODUCTS,
+    }).valueChanges.subscribe(({data, error}: any) => {
+      const { items } = data.productsCollection; 
+      this.products = [...items]
+    })
+  }
 
   searchTerm: string = "";
-
-  products: Product[] = [
-    {productImage: "https://via.placeholder.com/500x300", productName: "ECO Natural", numberInPresentation: 4, kilocalories: 62},
-    {productImage: "https://via.placeholder.com/500x300", productName: "Azucarado", numberInPresentation: 16, kilocalories: 72},
-    {productImage: "https://via.placeholder.com/500x300", productName: "Coco", numberInPresentation: 4, kilocalories: 72},
-    {productImage: "https://via.placeholder.com/500x300", productName: "Griego Natural", kilocalories: 96},
-  ]
+  products: Product[] = [ ]
 
   isPartOfSearch(text: string) {
     if(this.searchTerm.trim() === "") return true;

@@ -10,7 +10,12 @@
 </div>
 <div class="container mt-3">
     <!-- Products displayed -->
-    <div class="row">
+    <div class="row" *ngIf="dataFetchError">
+        <div class="vh-100 d-flex justify-content-center align-items-center">
+            <h5>Unfortunately, we could not find the products you were looking for. <br> Please, try again later...</h5>
+        </div>
+    </div>
+    <div class="row" *ngIf="!dataFetchError">
         <div class="col-4 mb-3" *ngFor="let product of products" [hidden]="!isPartOfSearch(product.productName!)">
             <app-product-card [product]="product"></app-product-card>
         </div>

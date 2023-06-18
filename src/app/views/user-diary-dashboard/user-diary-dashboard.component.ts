@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./user-diary-dashboard.component.css']
 })
 export class UserDiaryDashboardComponent {
+  fetchDataError: boolean = false;
   isDiarySet: boolean = false;
   caloriesConsumed?: number;
   maxCalories?: number;
@@ -33,6 +34,7 @@ export class UserDiaryDashboardComponent {
     this.apiService
         .getAllProducts()
         .subscribe( ({data, error}: any) => {
+          if(error) this.fetchDataError = true;
           let { items } = data.productsCollection;
           this.showFourLastProducts(items);
         })

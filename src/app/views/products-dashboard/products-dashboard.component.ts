@@ -11,11 +11,14 @@ import { GET_PRODUCTS } from "../../graphql.operations";
 })
 export class ProductsDashboardComponent implements OnInit {
 
+  dataFetchError: boolean = false;
   constructor( private apiService: ApiService, private apollo: Apollo) { }
+
   ngOnInit() {
     this.apiService
         .getAllProducts()
         .subscribe(({data, error}: any) => {
+          if(error) this.dataFetchError = true;
           const { items } = data.productsCollection; 
           this.products = [...items]
         })

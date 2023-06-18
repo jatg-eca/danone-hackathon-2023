@@ -26,7 +26,12 @@
         <div class="col-1"></div>
         <!-- Products of interest -->
         <div class="col-6 dan-frame">
-            <div class="row">
+            <div class="row" *ngIf="fetchDataError">
+                <div class="vh-100 d-flex align-items-center">
+                    <h5>We could not get your products at the moment. Please, try again later...</h5>
+                </div>
+            </div>
+            <div class="row" *ngIf="!fetchDataError">
                 <app-frame-info [textInformation]="productsOfInterestBanner"></app-frame-info>
                 <div class="col-6 my-3 d-flex justify-content-center flex-column" *ngFor="let product of products;">
                     <app-product-card [product]="product"></app-product-card>

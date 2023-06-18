@@ -1,4 +1,5 @@
 <div class="container mt-3 mb-4">
+    <!-- Search bar -->
     <div class="row">
         <div class="col-12">
             <div class="float-end">
@@ -8,6 +9,7 @@
     </div>
 </div>
 <div class="container mt-3">
+    <!-- Products displayed -->
     <div class="row">
         <div class="col-4 mb-3" *ngFor="let product of products" [hidden]="!isPartOfSearch(product.productName!)">
             <app-product-card [product]="product"></app-product-card>

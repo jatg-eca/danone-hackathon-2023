@@ -1,3 +1,7 @@
+.danone-logo {
+    transform: scale(1.5);
+}
+
 .clearfix {
     height: 1vh;
 }

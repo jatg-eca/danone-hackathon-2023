@@ -13,12 +13,12 @@ export class ProductsDashboardComponent implements OnInit {
 
   constructor( private apiService: ApiService, private apollo: Apollo) { }
   ngOnInit() {
-    this.apollo.watchQuery({
-      query: GET_PRODUCTS,
-    }).valueChanges.subscribe(({data, error}: any) => {
-      const { items } = data.productsCollection; 
-      this.products = [...items]
-    })
+    this.apiService
+        .getAllProducts()
+        .subscribe(({data, error}: any) => {
+          const { items } = data.productsCollection; 
+          this.products = [...items]
+        })
   }
 
   searchTerm: string = "";

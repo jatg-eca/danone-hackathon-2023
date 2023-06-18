@@ -9,3 +9,9 @@ img {
     width: auto;
     object-fit: contain;
 }
+
+.product-card:hover {
+  transition: transform 1.5s;
+  cursor: pointer;
+  transform: scale(1.06);
+}

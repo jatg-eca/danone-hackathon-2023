@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../../interfaces/product';
+import { ApiService } from 'src/app/services/api.service';
 
 
 
@@ -14,16 +15,13 @@ export class UserDiaryDashboardComponent {
   maxCalories?: number;
   burnedCalories?: number;
 
-  products: Product[] = [
-    {productImage: "https://via.placeholder.com/500x300", productName: "ECO Natural", numberInPresentation: 4, kilocalories: 62},
-    {productImage: "https://via.placeholder.com/500x300", productName: "Azucarado", numberInPresentation: 16, kilocalories: 72},
-    {productImage: "https://via.placeholder.com/500x300", productName: "Coco", numberInPresentation: 4, kilocalories: 72},
-    {productImage: "https://via.placeholder.com/500x300", productName: "Griego Natural", kilocalories: 96},
-  ]
+  products: Product[] = [ ]
   meals?: any[];
 
   maxKcalLimitBanner: string = "Your maximum kcal limit";
   productsOfInterestBanner: string = "Your products of interest in terms of ecological footprint";
+
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     let caloricPlan = localStorage.getItem("caloricPlan");
@@ -31,6 +29,13 @@ export class UserDiaryDashboardComponent {
     if(caloricPlan) this.getCaloricPlanValues(caloricPlan);
     if(mealPlan) this.getMealPlanValues(mealPlan);
     this.checkIfDiaryIsSet();
+
+    this.apiService
+        .getAllProducts()
+        .subscribe( ({data, error}: any) => {
+          let { items } = data.productsCollection;
+          this.showFourLastProducts(items);
+        })
   }
 
   getCaloricPlanValues(caloricPlan: string) {
@@ -53,8 +58,12 @@ export class UserDiaryDashboardComponent {
     return this.maxCalories! >= 0 && !!this.caloriesConsumed && !!this.burnedCalories;
   }
 
-  changeRemainingCalories(event: any) {
-
+  showFourLastProducts(items: any[]) {
+    let copyOfItems: Product[] = [...items];
+    copyOfItems = copyOfItems.slice(-4);
+    this.products = [...copyOfItems];
   }
+
+  changeRemainingCalories(event: any) {}
 
 }

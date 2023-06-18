@@ -1,32 +1,20 @@
 import { Injectable } from '@angular/core';
-// import axios from "axios";
+import { Apollo } from "apollo-angular";
+import { GET_PRODUCTS } from "../graphql.operations";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   
-//   apiHandler = axios.create({
-//     // baseURL: "https://danone-firebase-hackathon-jatg-default-rtdb.firebaseio.com"
-//     baseURL: "https://vue-demos-m1jtrinida-default-rtdb.firebaseio.com/"
-//     // baseURL: "https://pokeapi.co/api/v2/"
-//   })
+  constructor(private apollo: Apollo) { }
 
-//   // apiHandler = fetch("https://danone-firebase-hackathon-jatg-default-rtdb.firebaseio.com")
+  getAllProducts() {
+    return this.apollo
+        .watchQuery(
+          {query: GET_PRODUCTS})
+        .valueChanges
+  }
 
-//   constructor() { }
-
-//   async getAllProducts() {
-//     const respp = await this.apiHandler.get("/entries");
-//     console.log(respp)
-//     // let auth: AxiosBasicCredentials = {}; 
-//     // this.apiHandler.get("/products", firebaseConfig);
-//     // () => {
-//     //   cors( request, response, ( ) => {
-
-//     //   }
-//     // }
-//     // const resp = await this.apiHandler;
-//     // console.log(resp);
-//   }
 }

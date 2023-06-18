@@ -34,7 +34,24 @@ To use the app, you may need to get all the installations before running the app
 
     with an open terminal at the directory where you cloned this project.
 
-5. You can check the app running at [http://localhost:4200](http://localhost:4200/) , or go the app deployed with Vercel [Vercel App by jatg-eca](https://danone-hackathon-2023-two.vercel.app/#/) .
+5. You can check the app running at [http://localhost:4200](http://localhost:4200/).
+
+**With Docker**
+1. If you have Docker installed ([or want to install it](https://docs.docker.com/engine/install/) ), create a directory and clone this repository.
+
+2. Open a terminal where the directory containing the root of this repository is located (the src directory of the app has to be seen), and run the command
+        
+        docker compose up
+
+3. Have sip of coffee, talk to the people around you! Docker will be building the app dist and mount it in an NGINX so that you can access to it. But first, wait...
+
+4. After the application was built, you can access to it at [localhost](http://localhost)
+
+**Checking the app deployed**
+
+1. The app is already deployed at [Vercel App by jatg-eca](https://danone-hackathon-2023-two.vercel.app/#/) .
+
+***NOTE: Keep in mind that you may need internet connection to check some of the images on the app, as they are downloaded via GraphQL API calls online***
 
 ## Decision making during the hackathon
 

@@ -1,0 +1,8 @@
+node_modules/
+coverage/
+dist/
+Dockerfile
+.angular/
+.dockerignore
+.gitignore
+docker-compose.yml

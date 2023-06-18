@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  danu-hack-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "danu-hack-app"
+    ports:
+      - "80:80"

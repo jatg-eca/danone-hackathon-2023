@@ -1,0 +1,20 @@
+.calorie-container-border {
+    height: 135px;
+    width: 135px;
+}
+.calorie-container-border:hover {
+    transition: border 0.3s;
+    cursor: default;
+    border: 2px solid var(--blue-200);
+
+    .calories-number {
+        transition: font-size 0.6s, font-weight 0.6s;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+    }
+}
+
+.calories-number {
+    color: var(--violet-blue);
+}

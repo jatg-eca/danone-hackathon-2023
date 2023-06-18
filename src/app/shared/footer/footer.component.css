@@ -1,0 +1,4 @@
+.footer-info a {
+    text-transform: uppercase;
+    color: var(--violet-blue);
+}

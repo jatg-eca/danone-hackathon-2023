@@ -1,0 +1,17 @@
+.login-navbar-bg {
+    background-color: var(--violet-blue);
+}
+
+#login-text {
+    color: white;
+}
+
+#login-text:hover {
+    cursor: pointer;
+}
+
+.logged-user-menu {
+    height: 6.5vh;
+    width: 6.5vh;
+    border-radius: 50%;
+}

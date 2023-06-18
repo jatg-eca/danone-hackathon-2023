@@ -1,0 +1,11 @@
+.food-day-container {
+    border-bottom: 1px solid var(--violet-blue);
+}
+
+input {
+    width: 100%;
+}
+
+.button-lg-secondary {
+    padding: 11px 20px;
+}

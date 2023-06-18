@@ -1,0 +1,25 @@
+<div class="container mt-3 mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="float-end">
+                <input type="text" class="form-control" placeholder="Search product..." [(ngModel)]="searchTerm">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-4 mb-3" *ngFor="let product of products" [hidden]="!isPartOfSearch(product.productName!)">
+            <app-product-card [product]="product"></app-product-card>
+        </div>
+    </div>
+</div>
+<div class="mt-5 mb-2 d-flex justify-content-end me-4">
+    <a href="https://www.danone.es/productos">
+        <div class="d-flex gap-2 violet-blue">
+            <p>See more products according to your caloric limit </p>
+            <span class="violet-blue"> ->
+            </span>
+        </div>
+    </a>
+</div>

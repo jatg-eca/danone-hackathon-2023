@@ -1,0 +1,30 @@
+.clearfix {
+    height: 1vh;
+}
+
+a {
+    text-decoration: underline;
+}
+
+.easter-egg-text {
+    animation: crazy-text infinite 15s 9s;
+}
+
+@keyframes crazy-text {
+    0% {
+        transform: translate(0px);
+    }
+    10% {
+        transform: translate(42px, 10px);
+    }
+    25% {
+        transform: translate(54px, -15px);
+    }
+    75% {
+        font-family: monospace;
+        transform: translate(-42px);
+    }
+    100% {
+        transform: translate(5px);
+    }
+}

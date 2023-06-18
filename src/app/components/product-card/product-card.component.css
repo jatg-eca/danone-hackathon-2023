@@ -1,0 +1,5 @@
+input[type="range"] {
+    width: 80%;
+    background-color: red;
+    height: 1.3vh;
+  }

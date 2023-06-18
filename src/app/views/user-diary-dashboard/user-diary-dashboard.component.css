@@ -1,0 +1,8 @@
+.dotted-count-element {
+    border: 4px dashed var(--blue-200);
+    border-radius: 50%;
+}
+
+.empty-diary {
+    height: 100%;
+}

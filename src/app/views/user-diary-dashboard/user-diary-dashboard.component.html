@@ -1,0 +1,46 @@
+<div class="m-5 d-flex justify-content-center">
+    <h5 class="light-blue-2 ">Welcome to your diary!</h5>
+</div>
+<div class="container mb-5">
+    <div class="row">
+        <!-- Maximum kcal limit -->
+        <div class="col-5 dan-frame">
+            <div *ngIf="!isDiarySet" class="empty-diary d-flex flex-column align-items-center justify-content-center">
+                <span class="dark-blue button-text my-4">It seems like you have not configured your diary...</span>
+                <button class="button-lg-primary" [routerLink]="['/diary']"><span class="button-text">Let's start!</span></button>
+            </div>
+            <div *ngIf="isDiarySet">
+                <app-frame-info [textInformation]="maxKcalLimitBanner"></app-frame-info>
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <app-calorie-count [caloriesNumber]="caloriesConsumed" caloriesName="Consumed"></app-calorie-count>
+                        <app-calorie-count [caloriesNumber]="maxCalories" caloriesName="Remaining" class="dotted-count-element"></app-calorie-count>
+                        <app-calorie-count [caloriesNumber]="burnedCalories" caloriesName="Burned"></app-calorie-count>
+                    </div>
+                    <div class="my-5" *ngFor="let meal of meals">
+                        <app-food-of-the-day [nameOfMeal]="meal.mealName" [chosenCalories]="meal.caloriesChangedInMeal" [remainingCalories]="maxCalories" (onSaveEvent)="changeRemainingCalories($event)" [disableButton]="true"></app-food-of-the-day>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <!-- Products of interest -->
+        <div class="col-6 dan-frame">
+            <div class="row">
+                <app-frame-info [textInformation]="productsOfInterestBanner"></app-frame-info>
+                <div class="col-6 my-3 d-flex justify-content-center flex-column" *ngFor="let product of products;">
+                    <app-product-card [product]="product"></app-product-card>
+                </div>
+            </div>
+            <div class="mt-5 mb-2 float-end">
+                <a href="https://www.danone.es/productos">
+                    <div class="d-flex gap-2 violet-blue">
+                        <p>Products you may be interested in... </p>
+                        <span class="violet-blue"> ->
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

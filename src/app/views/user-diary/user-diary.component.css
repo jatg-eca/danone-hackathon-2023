@@ -1,0 +1,28 @@
+.diary-frame {
+    border: 2px solid var(--vivid-ceru);
+    margin: 5vh 10vw;
+}
+
+input{
+    width: 50%;
+}
+
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+input{
+    color: var(--blue-950);
+}
+
+.caption-alert span{
+    color: #D40000;
+}

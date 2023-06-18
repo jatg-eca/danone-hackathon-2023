@@ -1,3 +1,9 @@
 .brand {
     cursor: pointer;
 }
+
+.brand-container {
+    width: 40%;
+    position: relative;
+    left: 6%;
+}

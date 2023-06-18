@@ -1,0 +1,7 @@
+input {
+    background-image: url("../../../assets/icons/search.svg");
+    background-repeat: no-repeat;
+    background-position: 0.3vw 50%;
+    text-indent: 1.4vw;
+    color: var(--dark-blue);
+}

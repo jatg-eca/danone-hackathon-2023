@@ -1,27 +1,52 @@
-# WeekendProject
+# Danone Hackathon 2023
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+## Project background 
+There may always be a need of having an interface to interact with the cyber-world. This project is a demo
+of how some features would be displayed for a web-app promoving health and ecological products.
 
-## Development server
+Being a rapidly changing world, where people have to think about their meals, their physical health, and
+the caring of the environment, the app is but a piece of what could be a great utility for the contemporary person.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Stack used
+The app is using AngularJS version 15.0.1, enhanced with TypeScript. As well, the CSS Library of Bootstrap was used. The app is calling a GraphQL with Contentful to obtain the data necessary for the app. 
 
-## Code scaffolding
+## Usage
+To use the app, you may need to get all the installations before running the app (See below).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+**With Angular CLI**
+1. If you do not have the Angular CLI installed, you have to run the command
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+        npm install -g @angular/cli
 
-## Running unit tests
+2. After installing the global Angular CLI. Clone this project.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. After cloning the project in your computer, keep in mind to install the node modules with the command
 
-## Running end-to-end tests
+        npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    when being with an open terminal at the directory where you cloned this project.
 
-## Further help
+4. After all node_modules are installed, you can run the command
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+        npm start
+
+    with an open terminal at the directory where you cloned this project.
+
+5. You can check the app running at [http://localhost:4200](http://localhost:4200/) , or go the app deployed with Vercel [Vercel App by jatg-eca](https://danone-hackathon-2023-two.vercel.app/#/) .
+
+## Decision making during the hackathon
+
+### Responsive or not?
+In order to complete the different tasks and objectives for this hackathon, I made the decision to be focusing
+on just the PC version of the app, as the Figma had already most of the features that would be used there.
+
+### Techonology to be used
+During the hackathon, more than once, I had to make a new decision. At the beginning, I was thinking about
+implementing with VueJS, but chose Angular instead as it was clearly written in the Hackathon Readme. Then,
+I was trying to prioritize which features and elements were more important than others, so that I can look the way
+of making them appear in the layout as the Figma, or with a different variation. By the end of the project, I was trying to use a Live Database in Firebase, but given that solving some unexpected CORS problems were taking so long, I make my choice of giving a chance to Contentful.
+
+### As simple as it can be
+Most of the time I tried to keep logic separated and to break into different components when possible, to avoid boilerplate code.

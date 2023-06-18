@@ -3,10 +3,10 @@
 }
 
 #login-text {
-    color: white;
+    color: #FFF;
 }
 
-#login-text:hover {
+.loguser-text:hover{
     cursor: pointer;
 }
 
@@ -14,4 +14,6 @@
     height: 6.5vh;
     width: 6.5vh;
     border-radius: 50%;
+    background-color: var(--light-blue);
+    border: none;
 }

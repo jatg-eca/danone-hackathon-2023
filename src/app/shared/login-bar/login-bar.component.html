@@ -1,15 +1,16 @@
 <div role="bar" class="100vw p-3 login-navbar-bg">
     <div class="row">
         <div class="col d-flex justify-content-end me-5">
-            <div *ngIf="!isUserLogged">
-                <span class="caption" id="login-text" (click)="logUser()">
+            <div class="d-flex align-content-center gap-2 loguser-text" *ngIf="!isUserLogged" (click)="logUser()">
+                <img src="../../../assets/icons/user_outline.svg" alt="" class="img-fluid">
+                <span class="caption" id="login-text">
                     Login/Sign Up
                 </span>
             </div>
             <div class="m-0 p-0" *ngIf="isUserLogged">
                 <div class="dropdown">
                     <button class="logged-user-menu" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        icon                    
+                        <img src="../../../assets/icons/user.svg" alt="" class="img-fluid">                    
                     </button>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" [routerLink]="['/profile']">Profile page</a></li>
